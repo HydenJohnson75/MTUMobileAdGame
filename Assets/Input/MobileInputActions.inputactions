@@ -1,0 +1,54 @@
+{
+    "name": "MobileInputActions",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "b7699ed3-fad3-48b2-b76b-767027310745",
+            "actions": [
+                {
+                    "name": "MoveLeft",
+                    "type": "Value",
+                    "id": "9551ffe9-2b4b-4833-8fc8-dcfd6d59583c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "MoveRight",
+                    "type": "Value",
+                    "id": "f8500e96-638c-4f9b-8a95-e93d218eacdc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1fdd827b-2cd4-4c95-a360-52bc75da2c78",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "25c02760-362d-4be6-8095-5cedf2d9956c",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
