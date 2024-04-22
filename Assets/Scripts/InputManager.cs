@@ -12,7 +12,7 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     private GameObject basket;
     private Basket basketScript;
-
+    private GameManager gameManager;
     public void OnMoveLeft(InputValue value)
     {
 
@@ -34,9 +34,15 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    public void OnPause()
+    {
+        gameManager.PauseGame();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         basketScript = basket.GetComponent<Basket>();
     }
 
