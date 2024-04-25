@@ -2191,6 +2191,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2282,6 +2283,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 928b790043eee7e4e9c4958859a67f0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42374a40f157f3143b927042f860e7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1054593330 stripped
@@ -4053,8 +4066,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 963194229}
-        m_TargetAssemblyTypeName: LevelPlayScript, Assembly-CSharp
+      - m_Target: {fileID: 1171408171}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ShowRewardAd
         m_Mode: 1
         m_Arguments:
@@ -5221,6 +5234,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1171408173}
   - {fileID: 963194228}
   - {fileID: 1659359832}
   - {fileID: 705507995}
@@ -5230,4 +5244,3 @@ SceneRoots:
   - {fileID: 392448278}
   - {fileID: 1234824244807781016}
   - {fileID: 1585632812}
-  - {fileID: 1171408173}

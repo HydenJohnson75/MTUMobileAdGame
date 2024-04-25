@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,6 +7,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private LevelPlayScript levelPlayScript;
+    private GoogleAdMobScript googleAdMobScript;
     private FoodSpawner foodSpawner;
     public bool gamePaused = false;
     [SerializeField]
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
     {
         foodSpawner = FindObjectOfType<FoodSpawner>();
         levelPlayScript = FindObjectOfType<LevelPlayScript>();
+        googleAdMobScript = FindObjectOfType<GoogleAdMobScript>();
     }
 
     // Update is called once per frame
@@ -35,7 +38,17 @@ public class GameManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "Food")
         {
-            levelPlayScript.LoadInterAd();
+            float randomNum = RandomNumber();
+            if (randomNum < 0.5f)
+            {
+                googleAdMobScript.LoadInterstitial();
+                
+            }
+            if (randomNum >= 0.5f)
+            {
+                levelPlayScript.LoadInterAd();
+            }
+            
             gamePaused = true;
             foodSpawner.RemoveFood(collision.gameObject);
         }
@@ -45,6 +58,20 @@ public class GameManager : MonoBehaviour
     {
         score += value;
         scoreText.text = score.ToString();
+    }
+
+    public void ShowRewardAd()
+    {
+        float randomNum = RandomNumber();
+        if (randomNum < 0.5f)
+        {
+            googleAdMobScript.LoadReward();
+
+        }
+        if (randomNum >= 0.5f)
+        {
+            levelPlayScript.ShowRewardAd();
+        }
     }
 
     public void PauseGame()
@@ -65,5 +92,12 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
         }
     }
+
+    private float RandomNumber()
+    {
+        return UnityEngine.Random.Range(0f, 1f);
+    }
+
+
 
 }
