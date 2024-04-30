@@ -5,6 +5,7 @@
     <package>com.google.android.gms:play-services-ads-identifier:18.0.1</package>
     <package>com.google.android.gms:play-services-basement:18.1.0</package>
     <package>com.google.android.ump:user-messaging-platform:2.2.0</package>
+    <package>com.google.games:gpgs-plugin-support:0.11.01</package>
     <package>com.ironsource.adapters:unityadsadapter:4.3.37</package>
     <package>com.ironsource.sdk:mediationsdk:8.0.0</package>
     <package>com.ironsource:adqualitysdk:7.18.1</package>
@@ -100,8 +101,8 @@
     <file>Assets/Plugins/Android/org.jetbrains.kotlinx.kotlinx-coroutines-core-jvm-1.7.1.jar</file>
   </files>
   <settings>
-    <setting name="androidAbis" value="armeabi-v7a" />
-    <setting name="bundleId" value="com.DefaultCompany.MTUMobileGamesADs" />
+    <setting name="androidAbis" value="arm64-v8a,armeabi-v7a" />
+    <setting name="bundleId" value="com.JGames.FoodFetchers" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
     <setting name="gradleTemplateEnabled" value="False" />

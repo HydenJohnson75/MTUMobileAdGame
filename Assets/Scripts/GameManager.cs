@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
     private GameObject rightArrow;
     [SerializeField]
     private TMP_Text scoreText;
+    [SerializeField]
+    private GameObject pauseButton;
+    [SerializeField]
+    private GameObject playButton;
 
     private int score = 0;
     // Start is called before the first frame update
@@ -83,12 +87,16 @@ public class GameManager : MonoBehaviour
             pauseMenu.SetActive(true);
             leftArrow.SetActive(false);
             rightArrow.SetActive(false);
+            playButton.SetActive(true);
+            pauseButton.SetActive(false);
         }
         else
         {
             pauseMenu.SetActive(false);
             leftArrow.SetActive(true);
             rightArrow.SetActive(true);
+            playButton.SetActive(false);
+            pauseButton.SetActive(true);
             Time.timeScale = 1;
         }
     }
