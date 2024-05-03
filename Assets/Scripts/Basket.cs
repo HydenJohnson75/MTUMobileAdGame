@@ -23,22 +23,28 @@ public class Basket : MonoBehaviour
     
     public void MoveLeft()
     {
-
-        transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        if(transform.position.z <= 271.11f)
+        {
+            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        }
         
     }
 
     public void MoveRight()
     {
-        transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+        if(transform.position.z >= 260.92f)
+        {
+            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Food"))
         {
+            gameManager.IncreaseCoins();
+            gameManager.IncreaseScore();
             foodSpawner.RemoveFood(collision.gameObject);
-            gameManager.IncreaseScore(collision.gameObject.GetComponent<Food_Item>().GetFoodValue());
         }
     }
 }

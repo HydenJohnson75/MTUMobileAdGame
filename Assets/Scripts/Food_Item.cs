@@ -5,15 +5,14 @@ using UnityEngine;
 public class Food_Item : MonoBehaviour
 {
     [SerializeField]
-    private int foodValue;
-    [SerializeField]
-    private float maxRotationSpeed;
+    private int maxRotationSpeed;
 
 
     // Start is called before the first frame update
     void Start()
     {
         ApplyRandomRotation();
+        ApplyRandomDrag();
     }
 
     // Update is called once per frame
@@ -24,18 +23,14 @@ public class Food_Item : MonoBehaviour
 
     void ApplyRandomRotation()
     {
-        // Generate random rotation angles around each axis
         float randomX = Random.Range(-180f, 180f);
         float randomY = Random.Range(-180f, 180f);
         float randomZ = Random.Range(-180f, 180f);
 
-        // Combine into a random rotation
         Quaternion randomRotation = Quaternion.Euler(randomX, randomY, randomZ);
 
-        // Apply the rotation to the GameObject
         transform.rotation = randomRotation;
 
-        // Optionally, add a random rotation speed
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
@@ -48,8 +43,14 @@ public class Food_Item : MonoBehaviour
         }
     }
 
-    public int GetFoodValue()
+    void ApplyRandomDrag()
     {
-        return foodValue;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.drag = Random.Range(2f, 3.7f);
+        }
     }
+
+
 }

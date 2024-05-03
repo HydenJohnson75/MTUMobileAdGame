@@ -145,6 +145,8 @@ public class GoogleAdMobScript : MonoBehaviour
         {
             rewardedAd.Show((Reward reward) =>
             {
+
+                gameManager.RewardCoins();
                 // TODO: Reward the user.
                 Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
             });

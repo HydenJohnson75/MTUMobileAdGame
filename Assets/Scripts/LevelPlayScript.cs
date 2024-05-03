@@ -66,7 +66,7 @@ public class LevelPlayScript : MonoBehaviour
 
     private void RewardedVideoAdRewardedEvent(IronSourcePlacement placement, IronSourceAdInfo info)
     {
-        gameManager.IncreaseScore(555);
+        gameManager.RewardCoins();
     }
 
     private void RewardedVideoAdOpenedEvent(IronSourceAdInfo info)
